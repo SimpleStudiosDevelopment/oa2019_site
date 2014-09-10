@@ -1,1 +1,1 @@
-<? phpinfo(); ?>
+<? echo $SERVER['remote_addr']; ?>
