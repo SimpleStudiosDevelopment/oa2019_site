@@ -1,1 +1,2 @@
-<? echo $SERVER['remote_addr']; ?>
+<?php include 'header.php' ?>
+
