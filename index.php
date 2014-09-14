@@ -1,2 +1,5 @@
-<?php include 'header.php' ?>
+<?php
+$page = 'Home';
+include 'header.php';
+?>
 
