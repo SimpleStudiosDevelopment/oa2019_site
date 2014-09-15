@@ -3,8 +3,10 @@
 <script src="/config/jquery.js"></script>
 <script src="/styles/bootstrap.js"></script>
 <?php
-include '/config/mybbint.php';
-$forum = new MyBBIntegrator;
+define('IN_MYBB',NULL);
+require_once 'config/MyBBI.php';
+require_once 'forums/global.php';
+$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins,$lang,$config);
 ?>
 
 <div class="navbar navbar-default">
@@ -59,23 +61,27 @@ $forum = new MyBBIntegrator;
     </ul>
     <ul class="nav navbar-nav navbar-right">
     <?php
-	if($forum->isLoggedIn()){
-		?>
-        
-        <?php
-		}else{
+	/**
+	if($MyBBI->isLoggedIn()){
+		echo 'Welcome';
+	}elseif(!$MyBBI->isLoggedIn()){
 	?>
       <li><a href="#">Register</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <p>To be developed</p>
+        <p>To be developed</p>
         </ul>
       </li>
       <?php
-		};
-		?>
+	}else{
+		echo 'System Error.';
+	}*/
+	?>
+    
 
     </ul>
   </div>
 </div>
+
+<?php echo $MyBBI->isLoggedIn() ? 'Logged in brah' : 'Login muthafuka'; ?>
