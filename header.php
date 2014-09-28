@@ -1,11 +1,11 @@
+<link href="/styles/styles.css" rel="stylesheet" />
 <link href="/styles/bootstrap.css" rel="stylesheet"/>
 <link href="/styles/bootswatch.css" rel="stylesheet" />
 <script src="/config/jquery.js"></script>
 <script src="/styles/bootstrap.js"></script>
 <?php
 define('IN_MYBB',NULL);
-require_once 'config/MyBBI.php';
-require_once 'forums/global.php';
+require_once '/var/www/html/oa/config/MyBBI.php';
 $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins,$lang,$config);
 ?>
 
@@ -61,9 +61,9 @@ $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins,$lang,$config);
     </ul>
     <ul class="nav navbar-nav navbar-right">
     <?php
-	/**
 	if($MyBBI->isLoggedIn()){
-		echo 'Welcome';
+		$userinfo = $MyBBI->getUser(0);
+		echo 'Welcome, ' . $userinfo['as'];
 	}elseif(!$MyBBI->isLoggedIn()){
 	?>
       <li><a href="#">Register</a></li>
@@ -76,12 +76,10 @@ $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins,$lang,$config);
       <?php
 	}else{
 		echo 'System Error.';
-	}*/
+	}
 	?>
     
 
     </ul>
   </div>
 </div>
-
-<?php echo $MyBBI->isLoggedIn() ? 'Logged in brah' : 'Login muthafuka'; ?>
