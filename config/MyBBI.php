@@ -1,6 +1,6 @@
 <?php
 
-require_once "/var/www/html/oa/forums/global.php";
+require_once "/var/www/oa/forums/global.php";
 
 /**
  * MyBBIntegrator - The integration class for MyBB and your website

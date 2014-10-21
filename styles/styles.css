@@ -6,3 +6,14 @@
 								 
 #footer-wrapper	h6								{margin:0px;
 												 color:#FFF;}
+
+#intro .well									{width:40%;
+												 display:inline;
+												 float:left;
+												 margin:5px;}
+												 
+#intro											{overflow:hidden;}
+
+#intro img										{float:left;
+												 display:inline;
+												 margin:10px;}
